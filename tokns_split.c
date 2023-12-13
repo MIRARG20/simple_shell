@@ -1,10 +1,10 @@
 #include "shell.h"
 /**
  * tokns_split - Split a string into strings.
- *
+ * @my_line : a char
  * Return: A pointer to a new array.
  */
-char **tokns_split(char *line)
+char **tokns_split(char *my_line)
 {
 const char *del = TOK_DELIM;
 int buf_s = 64;
@@ -16,7 +16,7 @@ if (!arr_tokens)
 printf("Allocation error \n");
 exit(EXIT_FAILURE);
 }
-token = strtok(line, del);
+token = strtok(my_line, del);
 for (; token != NULL; token = strtok(NULL, del))
 {
 if (token[0] == '#')

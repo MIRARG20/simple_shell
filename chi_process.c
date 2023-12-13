@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * new_process - create a new process
+ * chi_process - create a new process and execute commands
  * @args: commands and flags
  *
  * Return: 0 if success, -1 otherwise

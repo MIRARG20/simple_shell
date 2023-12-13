@@ -30,7 +30,7 @@ line[i] = ch;
 if (i >= buf_s - 1)
 {
 buf_s += 1024;
-t = realloc(line, buf_s * sizeof(char));
+t = realloc(line, buf_s *sizeof(char));
 if (t == NULL)
 {
 printf("Reallocation error\n");
