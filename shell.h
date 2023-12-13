@@ -7,7 +7,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #define TOK_DELIM " \t\r\n\a"
-
+#define BUFFER_SIZE 1024
 extern char **environ;
 void interactive(void);
 void non_interactive(void);

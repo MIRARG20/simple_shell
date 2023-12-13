@@ -1,36 +1,58 @@
 #include "shell.h"
 
 /**
- * get_line - read line from stdin
+ * my_getline - read a line from a stream
+ * @lineptr: pointer to a pointer to a character,
+ * which will point to the line read
+ * @n: pointer to a size_t, which will be set to
+ * the length of the line read
+ * @stream: pointer to a FILE, which is the stream
+ * to read from
  *
- * Return: a pointer to the line with content
+ * Return: the number of characters read,
+ * or -1 if an error occurred
  */
-char *get_line(void)
+
+
+
+ssize_t my_getline(char **lineptr, size_t *n, FILE *stream)
 {
-size_t bufsize = 1024;
-char *line = malloc(bufsize * sizeof(char));
-if (!line)
+static char buffer[BUFFER_SIZE];
+size_t pos = 0;
+ssize_t red;
+char c;
+
+if (lineptr == NULL || n == NULL || stream == NULL)
 {
-perror("Unable to allocate buffer");
-exit(EXIT_FAILURE);
+return (-1);
 }
 
-if (fgets(line, bufsize, stdin) == NULL)
+while ((red = read(fileno(stream), &c, 1)) == 1 && c != '\n')
 {
-if (feof(stdin))
+buffer[pos++] = c;
+if (pos == BUFFER_SIZE)
 {
-free(line);
-exit(EXIT_SUCCESS);
+buffer[pos] = '\0';
+*lineptr = strdup(buffer);
+*n = pos;
+return (pos);
+}
+}
+
+buffer[pos] = '\0';
+*lineptr = strdup(buffer);
+*n = pos;
+
+if (red == -1)
+{
+return (-1);
+}
+else if (red == 0)
+{
+return ((pos) > 0 ? pos : (size_t)-1);
 }
 else
 {
-free(line);
-perror("Error reading line from stdin");
-exit(EXIT_FAILURE);
+return (pos);
 }
 }
-
-return (line);
-}
-
-
