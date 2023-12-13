@@ -20,4 +20,5 @@ int _cd(char **args);
 int _help(char **args);
 int E_exit(char **args);
 int _env(char **args);
+ssize_t my_getline(char **lineptr, size_t *n, FILE *stream);
 #endif
