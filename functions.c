@@ -49,12 +49,10 @@ return (1);
 int _help(char **args)
 {
 (void)args;
-printf("Simple Shell\n");
-printf("Builtin commands:\n");
-printf("Change directory\n");
-printf("Print environment variables\n");
-printf("Display help information\n");
-printf("Exit the shell\n");
+printf("cd for Change the directory\n");
+printf("env for Print the environment variables\n");
+printf("help for get information\n");
+printf("Exit for Exit shell\n");
 return (1);
 }
 

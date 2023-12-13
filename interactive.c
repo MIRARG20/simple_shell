@@ -9,23 +9,19 @@ void interactive(void)
 {
 char *my_line;
 char **arguments;
-int st = -1;
+int x;
 
-printf("my_shell$ ");
 
-while (st == -1)
+
+while (1)
 {
-
+printf("my_shell$ ");
 my_line = get_line();
 arguments = tokns_split(my_line);
-st = _execute(arguments);
+x = _execute(arguments);
 
+}
 free(my_line);
 free(arguments);
-if (st == -1)
-{
-printf("my_shell$ ");
-}
-}
-exit(st);
+exit(x);
 }

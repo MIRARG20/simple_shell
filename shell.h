@@ -20,4 +20,5 @@ int _help(char **args);
 int E_exit(char **args);
 int _env(char **args);
 int _strcmp(char *s1, char *s2);
+char *_getenv(const char *ptr);
 #endif
