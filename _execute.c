@@ -30,7 +30,7 @@ return (-1);
 
 while (i < (int)(sizeof(builtin_command) / sizeof(char *)))
 {
-if (strcmp(args[0], builtin_command[i]) == 0)
+if (_strcmp(args[0], builtin_command[i]) == 0)
 {
 return ((*func[i])(args));
 }

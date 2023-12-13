@@ -8,7 +8,8 @@
 char *get_line(void)
 {
 size_t bufsize = 1024;
-char *line = malloc(bufsize * sizeof(char));
+char *line;
+line = malloc(bufsize * sizeof(char));
 if (!line)
 {
 perror("Unable to allocate buffer");

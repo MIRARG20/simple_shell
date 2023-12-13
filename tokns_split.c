@@ -9,8 +9,9 @@ char **tokns_split(char *my_line)
 const char *del = TOK_DELIM;
 int buf_s = 64;
 char *token;
-char **arr_tokens = malloc(sizeof(char *) * buf_s);
+char **arr_tokens;
 int i = 0;
+arr_tokens = malloc(sizeof(char *) * buf_s);
 if (!arr_tokens)
 {
 printf("Allocation error \n");

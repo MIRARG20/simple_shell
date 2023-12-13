@@ -72,3 +72,27 @@ exit(0);
 }
 
 
+/**
+ * _strcmp - compare string values
+ * @a: first argument
+ * @b: second argument
+ *
+ * Return: 0 If the two strings are identical,
+ * returns 1 If the first string is greater than the second string,
+ * returns (-1) If the first string is less than the second string
+ */
+int _strcmp(char *a, char *b)
+{
+int i;
+
+i = 0;
+while (a[i] != '\0' && b[i] != '\0')
+{
+if (a[i] != b[i])
+{
+return (a[i] - b[i]);
+}
+i++;
+}
+return (0);
+}

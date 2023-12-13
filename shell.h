@@ -7,7 +7,6 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #define TOK_DELIM " \t\r\n\a"
-#define BUFFER_SIZE 1024
 extern char **environ;
 void interactive(void);
 void non_interactive(void);
@@ -20,5 +19,5 @@ int _cd(char **args);
 int _help(char **args);
 int E_exit(char **args);
 int _env(char **args);
-ssize_t my_getline(char **lineptr, size_t *n, FILE *stream);
+int _strcmp(char *s1, char *s2);
 #endif
