@@ -35,7 +35,6 @@ return (-1);
 }
 if (s == 0)
 {
-printf("Child process executed successfully.\n");
 return (0);
 }
 else
@@ -44,5 +43,5 @@ fprintf(stderr, "Error: Child process did not execute successfully.\n");
 return (-1);
 }
 }
-return (-1);
+return (0);
 }

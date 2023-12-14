@@ -14,7 +14,6 @@ if (args[0] == NULL)
 return (-1);
 }
 
-/*// Check if the command is a built-in*/
 if (_strcmp(args[0], "cd") == 0)
 {
 return (_cd(args));
@@ -31,7 +30,5 @@ else if (_strcmp(args[0], "exit") == 0)
 {
 return (E_exit(args));
 }
-
-/*// If not a built-in, try to execute from PATH*/
 return (chi_process(args));
 }
