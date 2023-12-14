@@ -21,7 +21,12 @@ arguments = tokns_split(my_line);
 x = _execute(arguments);
 
 }
+free_tokens(arguments);
 free(my_line);
-free(arguments);
+
+if (x >= 0)
+{
 exit(x);
 }
+}
+

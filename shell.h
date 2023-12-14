@@ -12,6 +12,7 @@ void interactive(void);
 void non_interactive(void);
 char *get_line(void);
 char **tokns_split(char *line);
+void free_tokens(char **tokens);
 int _execute(char **args);
 int chi_process(char **args);
 char *read_std(void);
@@ -19,6 +20,6 @@ int _cd(char **args);
 int _help(char **args);
 int E_exit(char **args);
 int _env(char **args);
-int _strcmp(char *s1, char *s2);
+int _strcmp(char *a, char *b);
 char *_getenv(const char *ptr);
 #endif
