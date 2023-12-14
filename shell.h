@@ -23,4 +23,6 @@ int _env(char **args);
 int _strcmp(char *a, char *b);
 char *_getenv(const char *ptr);
 size_t _strlen(const char *ptr);
+int _atoi(const char *p);
+
 #endif

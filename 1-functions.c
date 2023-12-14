@@ -57,40 +57,53 @@ return (1);
 }
 
 /**
- * E_exit - Exit the shell
- * @args: Array of arguments (unused)
+ * E_exit - Exit the shell with a specified status.
+ * @args: Array of arguments, where args[1] is the exit status.
  *
- * Return: 0 (success)
+ * Return: Always returns the specified exit status.
  */
 int E_exit(char **args)
 {
-(void)args;
+if (args[1] != NULL)
+{
+int status = _atoi(args[1]);
+printf("Exiting the shell with status %d\n", status);
+exit(status);
+}
+else
+{
 printf("Exiting the shell\n");
 exit(0);
 }
+}
+
 
 
 /**
- * _strcmp - compare string values
- * @a: first argument
- * @b: second argument
+ * _atoi - Convert a string to an integer.
+ * @p: The input string.
  *
- * Return: 0 If the two strings are identical,
- * returns 1 If the first string is greater than the second string,
- * returns (-1) If the first string is less than the second string
+ * Return: The converted integer.
  */
-int _strcmp(char *a, char *b)
+int _atoi(const char *p)
 {
-int i;
+int result = 0;
+int n = 1;
+int i = 0;
 
-i = 0;
-while (a[i] != '\0' && b[i] != '\0')
+if (p[0] == '-')
 {
-if (a[i] != b[i])
-{
-return (a[i] - b[i]);
-}
+n = -1;
 i++;
 }
-return (0);
+
+while (p[i] != '\0' && p[i] >= '0' && p[i] <= '9')
+{
+result = result * 10 + (p[i] - '0');
+i++;
 }
+
+
+return (result *n);
+}
+
