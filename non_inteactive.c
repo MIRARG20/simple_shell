@@ -11,7 +11,7 @@ void non_interactive(void)
 {
 char *my_line;
 char **args;
-int status = -1;
+int status;
 
 while (status == -1)
 {
