@@ -19,14 +19,17 @@ printf("my_shell$ ");
 my_line = get_line();
 arguments = tokns_split(my_line);
 x = _execute(arguments);
-
-}
 free_tokens(arguments);
 free(my_line);
 
+}
 if (x >= 0)
 {
-exit(x);
+exit(0);
 }
+free_tokens(arguments);
+free(my_line);
 }
+
+
 

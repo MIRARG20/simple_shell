@@ -1,8 +1,10 @@
 #include "shell.h"
+
 /**
  * tokns_split - Split a string into strings.
- * @my_line : a char
- * Return: A pointer to a new array.
+ * @my_line: a pointer to a char string
+ *
+ * Return: A pointer to a new array.i
  */
 char **tokns_split(char *my_line)
 {
@@ -34,13 +36,14 @@ printf("Reallocation error\n");
 exit(EXIT_FAILURE);
 }
 }
-arr_tokens[i++] = strdup(token);
-if (!arr_tokens[i - 1])
+arr_tokens[i++] = _my_strdup(token);
+if (arr_tokens[i - 1] == NULL)
 {
 printf("Allocation error\n");
 exit(EXIT_FAILURE);
 }
 }
 arr_tokens[i] = NULL;
+
 return (arr_tokens);
 }
